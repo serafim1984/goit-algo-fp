@@ -74,7 +74,6 @@ class LinkedList:
     cur.next = temp_1
     self.head = cur
 
-
 # SORTING
 
   def merge_sort(self, head):
@@ -129,9 +128,29 @@ class LinkedList:
     self.head = self.merge_sort(self.head)
 
 
+def merge_lists(list1, list2):
+    merged_list = LinkedList()
+    current1 = list1.head
+    current2 = list2.head
 
+    # Merge the two sorted lists
+    while current1 and current2:
+        if current1.data < current2.data:
+            merged_list.insert_at_end(current1.data)
+            current1 = current1.next
+        else:
+            merged_list.insert_at_end(current2.data)
+            current2 = current2.next
 
-      
+    # Append the remaining nodes of the non-empty list
+    while current1:
+        merged_list.insert_at_end(current1.data)
+        current1 = current1.next
+    while current2:
+        merged_list.insert_at_end(current2.data)
+        current2 = current2.next
+
+    return merged_list
 
 
 llist = LinkedList()
@@ -159,3 +178,29 @@ llist.sort()
 
 print("Linked list after merge sort:")
 llist.print_list()
+
+
+llist_2 = LinkedList()
+
+# Вставляємо вузли в початок
+llist_2.insert_at_beginning(1)
+llist_2.insert_at_beginning(4)
+llist_2.insert_at_beginning(3)
+llist_2.insert_at_beginning(8)
+llist_2.insert_at_beginning(16)
+
+
+print("New Linked list:")
+llist_2.print_list()
+
+llist_2.sort()
+
+print("New Linked list sorted:")
+llist_2.print_list()
+
+mergeed_list = merge_lists(llist, llist_2)
+
+print("Two lists merged and sorted:")
+
+mergeed_list.print_list()
+
