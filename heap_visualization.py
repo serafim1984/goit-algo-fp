@@ -58,16 +58,3 @@ if __name__ == '__main__':
 
     # Відображення дерева
     draw_tree(heap_tree_root)
-
-
-# Створення дерева
-#root = Node(0)
-#root.left = Node(4)
-#root.left.left = Node(5)
-#root.left.right = Node(10)
-#root.right = Node(1)
-#root.right.left = Node(3)
-#root.right.right = Node(18)
-
-# Відображення дерева
-#draw_tree(root)
