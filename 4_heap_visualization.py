@@ -50,10 +50,11 @@ def build_heap_tree(heap, index=0):
 
 
 if __name__ == '__main__':
-    #
+    # задавання значень для піраміди у масиві та утворення піраміди з масиву
     heap_array = [1, 3, 5, 10, 100, 55, 0, 14, 22, 9, 2, 4, 34, 2, 1, 2]
     heapq.heapify(heap_array)
-    #
+
+    # побудова піраміди
     heap_tree_root = build_heap_tree(heap_array)
 
     # Відображення дерева
